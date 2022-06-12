@@ -9,14 +9,16 @@ class App:
 
     def dispatch_request(self, request):
         """Dispatches the request."""
+        print(request.path)
+        print(request.method)
         if (
             request.path in PATH_AND_METHODS
             and PATH_AND_METHODS[request.path][0] == request.method
         ):
-            result, status = PATH_AND_METHODS[request.path][1](request)
+            result = PATH_AND_METHODS[request.path][1](request)
             return Response(
                 json.dumps(result, sort_keys=True) if result else {},
-                status=status,
+                status = result.get('status'),
                 content_type="application/json"
             )
         return NotFound()
