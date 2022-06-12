@@ -9,8 +9,8 @@ class App:
 
     def dispatch_request(self, request):
         """Dispatches the request."""
-        print(request.path)
-        print(request.method)
+        #print(request.path)
+        #print(request.method)
         if (
             request.path in PATH_AND_METHODS
             and PATH_AND_METHODS[request.path][0] == request.method

@@ -2,7 +2,7 @@ import json
 
 __author__ = 'kcastanedat'
 
-class Response():
+class Response:
     """Contains http status and custom responses for services"""
     status_values = {
             100: "",

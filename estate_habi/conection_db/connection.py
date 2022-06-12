@@ -15,8 +15,6 @@ class ConnectionDB:
                 password = PASSWORD_DB,
                 db = SCHEMA_DB
             )
-            #self.cursor = self.connection.cursor()
-            print('conexión exitosa')
             return self.connection
 
         except (Exception) as e:
