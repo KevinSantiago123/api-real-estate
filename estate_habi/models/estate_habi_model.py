@@ -6,9 +6,7 @@ __author__ = 'kcastanedat'
 
 
 class OperationDB:
-    """
-    Allows you to perform operations to query the databases
-    """
+    """Allows you to perform operations to query the databases"""
 
     def __init__(self):
         self.conn = ConnectionDB()

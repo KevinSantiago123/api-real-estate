@@ -7,9 +7,7 @@ __author__ = 'kcastanedat'
 
 
 class ConnectionDB:
-    """
-        Allows connection to a database
-    """
+    """Allows connection to a database Mysql"""
 
     def connect(self):
         try:
