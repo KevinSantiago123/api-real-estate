@@ -24,3 +24,7 @@ This microservice allows you to list the real estate of the company.
 ###### Paso4. Run *run.bat* located in the root of the project if the operating system is windows
 
 Note: In case the operating system is Ios or Linux, configure the file in the **/server/envs.py** path by uncommenting the global variables used for those operating systems and commenting out the global variables for Windows. After executing run.sh that is in the root of the project.
+
+
+## 11.Extend the model for Likes functionality.
+![](https://drive.google.com/file/d/1KdHpWyThmLDI8USnXzpZ6UC5724-9TGF/view?usp=sharing)
