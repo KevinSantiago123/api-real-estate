@@ -1,5 +1,6 @@
 __author__ = 'kcastanedat'
 
+
 @classmethod
 class ExceptionPersonalized(Exception):
     """API exceptions, in case an exception is not sent,

@@ -2,6 +2,8 @@ from estate_habi.utils.exceptions import ExceptionPersonalized
 from estate_habi.conection_db.connection import ConnectionDB
 from server.response import Response
 
+__author__ = 'kcastanedat'
+
 
 class OperationDB:
     """
@@ -53,12 +55,13 @@ class OperationDB:
         try:
             self.__query_filter = {
                 'status': "AND status.name = '%s'",
-                'year' : "AND property_f.year = %s",
-                'city' : "AND property_f.city = '%s'"
+                'year': "AND property_f.year = %s",
+                'city': "AND property_f.city = '%s'"
             }
             for key, value in request.items():
                 if self.__query_filter.get(key) is not None:
-                    self.query = f"{self.query} {self.__query_filter.get(key)}" % (value)
+                    self.query = f"{self.query} {self.__query_filter.get(key)}" % (
+                        value)
 
             self.cursor = self.connection.cursor()
             self.cursor.execute(self.query)
@@ -89,7 +92,7 @@ class Validations:
     def request_is_not_valid(self):
         """Validate the parameters, their length and data type in the request"""
         if len(self.request.keys()) > 0:
-            #return False, {'ppp':'Hello!'}
+            # return False, {'ppp':'Hello!'}
             for key, value in self.request.items():
                 self.valid_keys(key)
                 self.valid_year(key, value)
@@ -104,7 +107,7 @@ class Validations:
         try:
             if self.params_type.get(key) is None:
                 self.message = f"The key: '{key}' is not a valid parameter"
-        except Exception  as e:
+        except Exception as e:
             print(e)
 
     def valid_year(self, key, value):
@@ -118,7 +121,7 @@ class Validations:
     def valid_status(self, key, value):
         """Validate value of status"""
         try:
-            if key == 'status'and value not in self.params_type.get(key):
+            if key == 'status' and value not in self.params_type.get(key):
                 self.message = f"The possible values for the key: '{key}' are {self.params_type.get(key)}"
         except Exception as e:
             print(e)
